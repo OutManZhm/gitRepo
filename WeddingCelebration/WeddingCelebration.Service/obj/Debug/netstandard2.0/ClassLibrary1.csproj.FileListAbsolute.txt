@@ -1,0 +1,4 @@
+D:\code\Person\WeddingCelebration\ClassLibrary1\bin\Debug\netstandard2.0\ClassLibrary1.deps.json
+D:\code\Person\WeddingCelebration\ClassLibrary1\bin\Debug\netstandard2.0\ClassLibrary1.dll
+D:\code\Person\WeddingCelebration\ClassLibrary1\obj\Debug\netstandard2.0\ClassLibrary1.AssemblyInfoInputs.cache
+D:\code\Person\WeddingCelebration\ClassLibrary1\obj\Debug\netstandard2.0\ClassLibrary1.AssemblyInfo.cs

@@ -1,0 +1,11 @@
+D:\code\Person\WeddingCelebration\WeddingCelebrationIService\bin\Release\netstandard2.0\WeddingCelebration.IService.deps.json
+D:\code\Person\WeddingCelebration\WeddingCelebrationIService\bin\Release\netstandard2.0\WeddingCelebration.IService.dll
+D:\code\Person\WeddingCelebration\WeddingCelebrationIService\bin\Release\netstandard2.0\WeddingCelebration.IService.pdb
+D:\code\Person\WeddingCelebration\WeddingCelebrationIService\bin\Release\netstandard2.0\WeddingCelebration.Model.dll
+D:\code\Person\WeddingCelebration\WeddingCelebrationIService\bin\Release\netstandard2.0\WeddingCelebration.Model.pdb
+D:\code\Person\WeddingCelebration\WeddingCelebrationIService\obj\Release\netstandard2.0\WeddingCelebration.IService.csprojAssemblyReference.cache
+D:\code\Person\WeddingCelebration\WeddingCelebrationIService\obj\Release\netstandard2.0\WeddingCelebration.IService.AssemblyInfoInputs.cache
+D:\code\Person\WeddingCelebration\WeddingCelebrationIService\obj\Release\netstandard2.0\WeddingCelebration.IService.AssemblyInfo.cs
+D:\code\Person\WeddingCelebration\WeddingCelebrationIService\obj\Release\netstandard2.0\WeddingCelebration.IService.csproj.CopyComplete
+D:\code\Person\WeddingCelebration\WeddingCelebrationIService\obj\Release\netstandard2.0\WeddingCelebration.IService.dll
+D:\code\Person\WeddingCelebration\WeddingCelebrationIService\obj\Release\netstandard2.0\WeddingCelebration.IService.pdb

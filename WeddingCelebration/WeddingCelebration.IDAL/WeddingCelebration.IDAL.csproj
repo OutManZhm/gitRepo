@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>D:\code\Person\WeddingCelebration\WeddingCelebration\bin\Debug\netcoreapp3.0\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Commen\Commen.csproj" />
+    <ProjectReference Include="..\WeddingCelebration.Model\WeddingCelebration.Model.csproj" />
+  </ItemGroup>
+
+</Project>

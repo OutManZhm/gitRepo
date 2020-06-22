@@ -1,0 +1,17 @@
+D:\code\Person\WeddingCelebration\Commen\bin\Debug\netstandard2.0\Commen.deps.json
+D:\code\Person\WeddingCelebration\Commen\bin\Debug\netstandard2.0\Commen.dll
+D:\code\Person\WeddingCelebration\Commen\bin\Debug\netstandard2.0\Commen.pdb
+D:\code\Person\WeddingCelebration\Commen\obj\Debug\netstandard2.0\Commen.csprojAssemblyReference.cache
+D:\code\Person\WeddingCelebration\Commen\obj\Debug\netstandard2.0\Commen.AssemblyInfoInputs.cache
+D:\code\Person\WeddingCelebration\Commen\obj\Debug\netstandard2.0\Commen.AssemblyInfo.cs
+D:\code\Person\WeddingCelebration\Commen\obj\Debug\netstandard2.0\Commen.dll
+D:\code\Person\WeddingCelebration\Commen\obj\Debug\netstandard2.0\Commen.pdb
+E:\Code\dotnetCoreLearn\netCore3\Commen\bin\Debug\netstandard2.0\Commen.deps.json
+E:\Code\dotnetCoreLearn\netCore3\Commen\bin\Debug\netstandard2.0\Commen.dll
+E:\Code\dotnetCoreLearn\netCore3\Commen\bin\Debug\netstandard2.0\Commen.pdb
+E:\Code\dotnetCoreLearn\netCore3\Commen\obj\Debug\netstandard2.0\Commen.csprojAssemblyReference.cache
+E:\Code\dotnetCoreLearn\netCore3\Commen\obj\Debug\netstandard2.0\Commen.csproj.CoreCompileInputs.cache
+E:\Code\dotnetCoreLearn\netCore3\Commen\obj\Debug\netstandard2.0\Commen.AssemblyInfoInputs.cache
+E:\Code\dotnetCoreLearn\netCore3\Commen\obj\Debug\netstandard2.0\Commen.AssemblyInfo.cs
+E:\Code\dotnetCoreLearn\netCore3\Commen\obj\Debug\netstandard2.0\Commen.dll
+E:\Code\dotnetCoreLearn\netCore3\Commen\obj\Debug\netstandard2.0\Commen.pdb
