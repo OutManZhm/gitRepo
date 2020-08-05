@@ -34,7 +34,7 @@ namespace WeddingCelebration.DAL
         public DBContext(IConfiguration Configuration)
         {
             //读取配置文件，数据库连接字符串
-            mySqlConnection = @"Server=cdb-aq6jw24p.gz.tencentcdb.com;Port=10024;database=test;uid=root;pwd=root123456;";
+            mySqlConnection = @"Server=localhost;Port=3306;database=test;uid=root;pwd=mms123456;";
         }
 
         public IDbTransaction DbTransaction { get; set; }

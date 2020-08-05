@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Authorized_services</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac.Configuration" Version="5.1.0" />
+    <PackageReference Include="IdentityServer4" Version="4.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WeddingCelebration.DAL\WeddingCelebration.DAL.csproj" />
+    <ProjectReference Include="..\WeddingCelebration.IService\WeddingCelebration.IService.csproj" />
+    <ProjectReference Include="..\WeddingCelebration.Service\WeddingCelebration.Service.csproj" />
+  </ItemGroup>
+
+
+</Project>

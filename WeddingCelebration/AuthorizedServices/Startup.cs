@@ -2,27 +2,24 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Autofac;
-using Autofac.Configuration;
-using IdentityServer4.AccessTokenValidation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using WeddingCelebration.Filters;
+using Autofac;
+using Autofac.Configuration;
 
-namespace WeddingCelebration
+namespace Authorized_services
 {
     public class Startup
     {
         private readonly IWebHostEnvironment _env;
         public Startup(IConfiguration configuration, IWebHostEnvironment env)
         {
-            
+
             _env = env;
             Configuration = configuration;
         }
@@ -33,17 +30,22 @@ namespace WeddingCelebration
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            //     services.AddIdentityServer()
+            //         .AddInMemoryIdentityResources(Config.GetIdentityResources())
+            //// .AddInMemoryApiResources(Config.GetApiResources())  //配置资源
+            //         .AddInMemoryClients(Config.GetClients())            //配置客户端
+            //        .AddResourceOwnerValidator<ResourceOwnerPasswordValidator>()
+            //        .AddDeveloperSigningCredential();
+            //
+            var builder = services.AddIdentityServer()
+       .AddInMemoryIdentityResources(Config.GetIdentityResources())
+       .AddInMemoryClients(Config.GetClients())
+       //.AddTestUsers(Config.GetUsers());
+       
+       .AddResourceOwnerValidator<ResourceOwnerPasswordValidator>();
+            
+            builder.AddDeveloperSigningCredential();
 
-            services.AddAuthentication("Bearer")
-        .AddJwtBearer("Bearer", options =>
-        {
-            options.Authority = "http://http://192.168.0.102:2001";
-            options.RequireHttpsMetadata = false;
-            options.Audience = "clientservice";
-        });
-
-            services.AddControllersWithViews().AddControllersAsServices();
-            services.AddMvc(t => { t.Filters.Add<ActionFilter>(); });
         }
         public void ConfigureContainer(ContainerBuilder builder)
         {
@@ -61,14 +63,13 @@ namespace WeddingCelebration
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            app.UseHttpsRedirection();
-
+            app.UseStaticFiles();
             app.UseRouting();
-        
-            app.UseAuthorization();
 
-        
+            //app.UseAuthorization();
+            app.UseIdentityServer();
+            app.UseAuthorization();
+            //  app.UseMvc();
 
 
             app.UseEndpoints(endpoints =>

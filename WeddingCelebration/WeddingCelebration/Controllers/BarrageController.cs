@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using IdentityServer4;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WeddingCelebration.IService;
@@ -10,6 +12,7 @@ namespace WeddingCelebration.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class BarrageController : Controller
     {
         private readonly IBarrageService _barrageService;

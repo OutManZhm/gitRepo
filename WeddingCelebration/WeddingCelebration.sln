@@ -20,6 +20,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeddingCelebration.Model", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Commen", "Commen\Commen.csproj", "{1DD002FE-1639-4296-86F2-67BF05A9CDA2}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthorizedServices", "AuthorizedServices\AuthorizedServices.csproj", "{AA1B6FA9-F51A-448E-B490-7F247C54D1C6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,6 +56,10 @@ Global
 		{1DD002FE-1639-4296-86F2-67BF05A9CDA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1DD002FE-1639-4296-86F2-67BF05A9CDA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1DD002FE-1639-4296-86F2-67BF05A9CDA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA1B6FA9-F51A-448E-B490-7F247C54D1C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA1B6FA9-F51A-448E-B490-7F247C54D1C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA1B6FA9-F51A-448E-B490-7F247C54D1C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA1B6FA9-F51A-448E-B490-7F247C54D1C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

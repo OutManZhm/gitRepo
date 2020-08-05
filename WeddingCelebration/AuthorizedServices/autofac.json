@@ -1,0 +1,10 @@
+﻿{
+  "modules": [
+    {
+      "type": "WeddingCelebration.DAL.RepositoryModule,WeddingCelebration.DAL"
+    },
+    {
+      "type": "WeddingCelebration.Service.ServiceModule,WeddingCelebration.Service"
+    }
+  ]
+}
