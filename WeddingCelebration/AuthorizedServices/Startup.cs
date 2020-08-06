@@ -30,20 +30,17 @@ namespace Authorized_services
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            //     services.AddIdentityServer()
-            //         .AddInMemoryIdentityResources(Config.GetIdentityResources())
-            //// .AddInMemoryApiResources(Config.GetApiResources())  //配置资源
-            //         .AddInMemoryClients(Config.GetClients())            //配置客户端
-            //        .AddResourceOwnerValidator<ResourceOwnerPasswordValidator>()
-            //        .AddDeveloperSigningCredential();
-            //
+
             var builder = services.AddIdentityServer()
-       .AddInMemoryIdentityResources(Config.GetIdentityResources())
+                .AddInMemoryIdentityResources(Config.Ids)
+       //.AddInMemoryIdentityResources(Config.GetIdentityResources())
+
+        //.AddInMemoryApiResources(Config.Apis)
+        .AddInMemoryApiScopes(Config.ApiScopes())
        .AddInMemoryClients(Config.GetClients())
-       //.AddTestUsers(Config.GetUsers());
-       
+
        .AddResourceOwnerValidator<ResourceOwnerPasswordValidator>();
-            
+
             builder.AddDeveloperSigningCredential();
 
         }

@@ -1,9 +1,23 @@
-﻿using IdentityServer4.Models;
+﻿using IdentityServer4;
+using IdentityServer4.Models;
 using IdentityServer4.Test;
 using System.Collections.Generic;
 
 public static class Config
 {
+    /// <summary>
+    /// 身份资源集合
+    /// </summary>
+    public static IEnumerable<IdentityResource> Ids =>
+        new IdentityResource[]
+        {
+                new IdentityResources.OpenId(),
+                new IdentityResources.Profile(),
+                new IdentityResources.Email(),
+                new IdentityResources.Address(),
+                new IdentityResources.Phone(),
+        };
+
     public static List<TestUser> GetUsers()
     {
         return new List<TestUser>
@@ -22,15 +36,21 @@ public static class Config
             }
         };
     }
-
-    public static IEnumerable<IdentityResource> GetIdentityResources()
+    //public static IEnumerable<ApiResource> Apis => new List<ApiResource> { new ApiResource("api1", "My API") };
+    //public static IEnumerable<IdentityResource> GetIdentityResources()
+    //{
+    //    return new IdentityResource[]
+    //    {
+    //        new IdentityResources.OpenId()
+    //    };
+    //}
+    public static IEnumerable<ApiScope> ApiScopes()
     {
-        return new IdentityResource[]
-        {
-            new IdentityResources.OpenId()
-        };
+        return new List<ApiScope>
+            {
+                new ApiScope("api1","My API")
+            };
     }
-
     public static IEnumerable<Client> GetClients()
     {
         return new List<Client>
@@ -61,7 +81,15 @@ public static class Config
                 {
                     new Secret("secret".Sha256())
                 },
-                AllowedScopes = { "openid" }
+                AllowedScopes = { 
+                    "api1",
+                IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        IdentityServerConstants.StandardScopes.Email,
+                        IdentityServerConstants.StandardScopes.Address,
+                        IdentityServerConstants.StandardScopes.Phone
+                },
+           
             }
         };
     }
