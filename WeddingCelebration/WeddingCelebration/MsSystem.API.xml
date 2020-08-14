@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WeddingCelebration</name>
+    </assembly>
+    <members>
+        <member name="T:WeddingCelebration.ApiGroup.ApiGroupAttribute">
+            <summary>
+            系统分组特性
+            </summary>
+        </member>
+        <member name="T:WeddingCelebration.ApiGroup.ApiGroupNames">
+            <summary>
+            系统分组枚举值
+            </summary>
+        </member>
+        <member name="T:WeddingCelebration.ApiGroup.GroupInfoAttribute">
+            <summary>
+            系统模块枚举注释
+            </summary>
+        </member>
+        <member name="M:WeddingCelebration.Controllers.BarrageController.Get">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WeddingCelebration.Controllers.BarrageController.Get(System.Int32)">
+            <summary>
+            api/Barrage/5
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeddingCelebration.Filters.ActionFilter.WriteLog(StackExchange.Profiling.MiniProfiler)">
+            <summary>
+            sql跟踪
+            下载：MiniProfiler.AspNetCore  4.0
+            </summary>
+            <param name="profiler"></param>
+        </member>
+    </members>
+</doc>

@@ -13,7 +13,14 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using WeddingCelebration.ApiGroup;
 using WeddingCelebration.Filters;
+using Swashbuckle.AspNetCore.Swagger;
+using Swashbuckle.AspNetCore.SwaggerGen;
+using Swashbuckle.AspNetCore.SwaggerUI;
+using System.IO;
+using Microsoft.Extensions.PlatformAbstractions;
+using Microsoft.OpenApi.Models;
 
 namespace WeddingCelebration
 {
@@ -42,6 +49,56 @@ namespace WeddingCelebration
             options.Audience = "clientservice";
         });
 
+
+            services.AddSwaggerGen(options =>
+            {
+                typeof(ApiGroupNames).GetFields().Skip(1).ToList().ForEach(f =>
+                {
+                    //获取枚举值上的特性
+                    var info = f.GetCustomAttributes(typeof(GroupInfoAttribute), false).OfType<GroupInfoAttribute>().FirstOrDefault();
+                    options.SwaggerDoc(f.Name, new OpenApiInfo
+                    {
+                        Title = info?.Title,
+                        Version = info?.Version,
+                        Description = info?.Description
+                    });
+                });
+                //没有加特性的分到这个NoGroup上
+                options.SwaggerDoc("NoGroup", new OpenApiInfo
+                {
+                    Title = "无分组"
+                });
+
+
+                //判断接口归于哪个分组
+                options.DocInclusionPredicate((docName, apiDescription) =>
+                {
+                    if (docName == "NoGroup")
+                    {
+                        ApiGroupAttribute atts = apiDescription.CustomAttributes().Where(c => c.GetType().ToString().EndsWith("ApiGroupAttribute")).FirstOrDefault() as ApiGroupAttribute;
+                        //当分组为NoGroup时，只要没加特性的都属于这个组
+                        return atts == null || atts.listName.Count == 0;
+                    }
+                    else
+                    {
+                        ApiGroupAttribute atts = apiDescription.CustomAttributes().Where(c => c.GetType().ToString().EndsWith("ApiGroupAttribute")).FirstOrDefault() as ApiGroupAttribute;
+                        if (atts != null && atts.listName.Count > 0)
+                        {
+                            return atts.listName.Contains(docName);
+                        }
+
+                        return false;
+                    }
+                });
+
+                //Determine base path for the application.  
+                var basePath = PlatformServices.Default.Application.ApplicationBasePath;
+                //Set the comments path for the swagger json and ui.  
+                var xmlPath = Path.Combine(basePath, "MsSystem.API.xml");
+                options.IncludeXmlComments(xmlPath);
+            });
+
+
             services.AddControllersWithViews().AddControllersAsServices();
             services.AddMvc(t => { t.Filters.Add<ActionFilter>(); });
         }
@@ -68,7 +125,20 @@ namespace WeddingCelebration
         
             app.UseAuthorization();
 
-        
+            app.UseSwagger();
+            app.UseSwaggerUI(options =>
+            {
+                //遍历ApiGroupNames所有枚举值生成接口文档，Skip(1)是因为Enum第一个FieldInfo是内置的一个Int值
+                typeof(ApiGroupNames).GetFields().Skip(1).ToList().ForEach(f =>
+                {
+                    //获取枚举值上的特性
+                    var info = f.GetCustomAttributes(typeof(GroupInfoAttribute), false).OfType<GroupInfoAttribute>().FirstOrDefault();
+                    options.SwaggerEndpoint($"/swagger/{f.Name}/swagger.json", info != null ? info.Title : f.Name);
+
+                });
+                options.SwaggerEndpoint("/swagger/NoGroup/swagger.json", "无分组");
+            });
+
 
 
             app.UseEndpoints(endpoints =>
