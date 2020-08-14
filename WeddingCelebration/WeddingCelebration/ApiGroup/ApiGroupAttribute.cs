@@ -10,9 +10,13 @@ namespace WeddingCelebration.ApiGroup
     /// <summary>
     /// 系统分组特性
     /// </summary>
-    
+    [AttributeUsage(AttributeTargets.Method)]
     public class ApiGroupAttribute : Attribute, IApiDescriptionGroupNameProvider
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="name"></param>
         public ApiGroupAttribute(ApiGroupNames[] name)
         {
             listName = new List<string>();
@@ -21,7 +25,13 @@ namespace WeddingCelebration.ApiGroup
                 listName.Add(item.ToString());
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public string GroupName { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
         public List<string> listName { get; set; }
     }
 }
